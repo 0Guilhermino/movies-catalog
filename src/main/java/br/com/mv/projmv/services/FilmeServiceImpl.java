@@ -27,6 +27,7 @@ public class FilmeServiceImpl {
         return dto;
     }
 
+
     public Page<FilmeDto> findAll(Pageable pageable) {
         Page<Filme> list = repository.findAll(pageable);
         return list.map(x -> new FilmeDto(x));

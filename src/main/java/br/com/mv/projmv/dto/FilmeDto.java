@@ -4,14 +4,21 @@ import br.com.mv.projmv.entity.Filme;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class FilmeDto {
+
 
     private String titulo;
     private int ano;
     private String duracao;
+	private List<CategoriaDto> categoriaDtoList = new ArrayList<>();
 
-    public FilmeDto(Filme filme) {
+
+	public FilmeDto(Filme filme) {
         this.titulo = filme.getTitulo();
         this.ano = filme.getAno();
         this.duracao = filme.getDuracao();
@@ -44,7 +51,12 @@ public class FilmeDto {
 	public void setDuracao(String duracao) {
 		this.duracao = duracao;
 	}
-    
-    
-    
+
+	public List<CategoriaDto> getCategoriaDtoList() {
+		return categoriaDtoList;
+	}
+
+	public void setCategoriaDtoList(List<CategoriaDto> categoriaDtoList) {
+		this.categoriaDtoList = categoriaDtoList;
+	}
 }

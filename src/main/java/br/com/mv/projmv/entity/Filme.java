@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.List;
 
 
 @Entity
@@ -21,19 +22,24 @@ public class Filme implements Serializable {
     private int ano;
     private String duracao;
     private LocalDateTime dataRegistro;
-    
+
+
+	@JoinTable(name = "tb_filme_genero", joinColumns = @JoinColumn(name = "filme_id"),
+			inverseJoinColumns = @JoinColumn(name = "categoria_id"))
+	private List<Categoria> categoria;
     
     public Filme() {
 		
 	}
     
-    public Filme(Long id, String titulo, int ano, String duracao, LocalDateTime dataRegistro) {
+    public Filme(Long id, String titulo, int ano, String duracao, LocalDateTime dataRegistro, List<Categoria> categoria) {
 		super();
 		this.id = id;
 		this.titulo = titulo;
 		this.ano = ano;
 		this.duracao = duracao;
 		this.dataRegistro = dataRegistro;
+		this.categoria = categoria;
 	}
 	
 	public Long getId() {
@@ -69,9 +75,12 @@ public class Filme implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-    
-    
 
+	public List<Categoria> getCategoria() {
+		return categoria;
+	}
 
-
+	public void setCategoria(List<Categoria> categoria) {
+		this.categoria = categoria;
+	}
 }
