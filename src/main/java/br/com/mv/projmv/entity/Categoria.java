@@ -13,6 +13,9 @@ public class Categoria implements Serializable {
         private Long id;
         private String categoria;
 
+        @ManyToOne
+        private Filme filme;
+
 
     public Categoria() {
 
@@ -29,6 +32,14 @@ public class Categoria implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Filme getFilme() {
+        return filme;
+    }
+
+    public void setFilme(Filme filme) {
+        this.filme = filme;
     }
 
     public String getCategoria() {

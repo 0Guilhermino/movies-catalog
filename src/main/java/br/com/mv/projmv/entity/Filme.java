@@ -24,7 +24,7 @@ public class Filme implements Serializable {
     private String duracao;
     private LocalDateTime dataRegistro;
 
-	@ManyToMany
+	@OneToMany
 	@JoinTable(name = "film_categoria", joinColumns = @JoinColumn(name = "filme_id"),
 			inverseJoinColumns = @JoinColumn(name = "categoria_id"))
 	private List<Categoria> categoria;
