@@ -2,10 +2,8 @@ package br.com.mv.projmv.controller;
 
 import br.com.mv.projmv.dto.CategoriaDto;
 import br.com.mv.projmv.dto.FilmeDto;
-import br.com.mv.projmv.entity.Categoria;
 import br.com.mv.projmv.entity.Filme;
 import br.com.mv.projmv.services.CategoriaServiceImpl;
-import br.com.mv.projmv.services.FilmeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -17,8 +15,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/filmes")
-public class GeneroController {
+@RequestMapping("/categorias")
+public class CategoriaController {
 
     @Autowired
     private CategoriaServiceImpl categoriaService;

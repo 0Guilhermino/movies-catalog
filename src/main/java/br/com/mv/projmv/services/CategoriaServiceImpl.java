@@ -18,8 +18,8 @@ public class CategoriaServiceImpl {
     @Autowired
     CategoriaRepository categoriaRepository;
 
-    public CategoriaDto save(CategoriaDto dto) {
-        return categoriaRepository.save(dto);
+    public CategoriaDto save(CategoriaDto categoriaDto) {
+        return categoriaRepository.save(categoriaDto);
     }
 
 
