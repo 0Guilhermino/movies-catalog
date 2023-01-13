@@ -12,17 +12,15 @@ public class Categoria implements Serializable {
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
         private String categoria;
-        @ManyToOne
-        private Filme filme;
+
 
     public Categoria() {
 
     }
 
-    public Categoria(Long id, String categoria, Filme filme) {
+    public Categoria(Long id, String categoria) {
         this.id = id;
         this.categoria = categoria;
-        this.filme = filme;
     }
 
     public Long getId() {
@@ -41,11 +39,5 @@ public class Categoria implements Serializable {
         this.categoria = categoria;
     }
 
-    public Filme getFilme() {
-        return filme;
-    }
 
-    public void setFilme(Filme filme) {
-        this.filme = filme;
-    }
 }

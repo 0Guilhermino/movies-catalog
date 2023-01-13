@@ -1,5 +1,6 @@
 package br.com.mv.projmv.entity;
 
+import br.com.mv.projmv.dto.CategoriaDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,7 +12,7 @@ import java.util.List;
 
 
 @Entity
-@Table(name = "tb_filme")
+@Table(name = "tb_film")
 public class Filme implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -23,8 +24,8 @@ public class Filme implements Serializable {
     private String duracao;
     private LocalDateTime dataRegistro;
 
-
-	@JoinTable(name = "tb_filme_genero", joinColumns = @JoinColumn(name = "filme_id"),
+	@ManyToMany
+	@JoinTable(name = "film_categoria", joinColumns = @JoinColumn(name = "filme_id"),
 			inverseJoinColumns = @JoinColumn(name = "categoria_id"))
 	private List<Categoria> categoria;
     

@@ -1,11 +1,17 @@
 package br.com.mv.projmv.dto;
 
+import br.com.mv.projmv.entity.Categoria;
+
 public class CategoriaDto {
 
     private Long id;
     private String categoria;
 
     public CategoriaDto() {
+
+    }
+
+    public CategoriaDto(Categoria categoria) {
 
     }
 

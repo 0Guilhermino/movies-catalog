@@ -18,12 +18,9 @@ public class CategoriaServiceImpl {
     @Autowired
     CategoriaRepository categoriaRepository;
 
-    public CategoriaDto save(CategoriaDto categoriaDto) {
-        return categoriaRepository.save(categoriaDto);
+    public Categoria save(Categoria genero) {
+        return categoriaRepository.save(genero);
     }
-
-
-
 
     public List<Categoria> findAll() {
         return categoriaRepository.findAll();
@@ -33,7 +30,8 @@ public class CategoriaServiceImpl {
         return categoriaRepository.findById(id);
     }
 
-    public void delete(Categoria categoria) {
-        categoriaRepository.delete(categoria);
+    public void delete(Categoria genero) {
+        categoriaRepository.delete(genero);
     }
+
 }

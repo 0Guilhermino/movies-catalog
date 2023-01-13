@@ -15,7 +15,7 @@ public class FilmeDto {
     private String titulo;
     private int ano;
     private String duracao;
-	private List<CategoriaDto> categoriaDtoList = new ArrayList<>();
+	private List<CategoriaDto> categoria = new ArrayList<>();
 
 
 	public FilmeDto(Filme filme) {
@@ -53,10 +53,10 @@ public class FilmeDto {
 	}
 
 	public List<CategoriaDto> getCategoriaDtoList() {
-		return categoriaDtoList;
+		return categoria;
 	}
 
 	public void setCategoriaDtoList(List<CategoriaDto> categoriaDtoList) {
-		this.categoriaDtoList = categoriaDtoList;
+		this.categoria = categoriaDtoList;
 	}
 }
